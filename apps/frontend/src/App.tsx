@@ -5,7 +5,7 @@ import { fetchHealthRecords, submitHealthRecord } from './services/api';
 function App() {
   const [records, setRecords] = useState<HealthRecord[]>([]);
   const [patientId, setPatientId] = useState('patient-01');
-  const [status, setStatus] = useState(healthStatusOptions[0]);
+  const [status, setStatus] = useState(healthStatusOptions[0] ?? '');
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
