@@ -20,7 +20,8 @@ router.post('/', async (req, res) => {
   const body = req.body as HealthRecord;
 
   if (!body?.patientId || !body?.status) {
-    return res.status(400).json({ error: 'patientId and status are required' });
+    res.status(400).json({ error: 'patientId and status are required' });
+    return;
   }
 
   const record: HealthRecord = {
